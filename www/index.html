@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html ng-app="sherlokApp">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Sherlok</title>
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script type="text/javascript" src="js/angular-cookies.min.js"></script>
+        <script type="text/javascript" src="js/controllers.js"></script>
+    </head>
+    <body onload="onLoad()">
+        <div>
+            <h1>Sherlok</h1>
+            <!-- Clear Cookies -->
+            <div ng-controller="ClearCookies">
+                <button ng-click="clearCookies()">Clear Cookies</button>
+            </div>
+            <!-- Show Cookies -->
+            <div ng-controller="ShowCookies">
+                <h1>Cookies Stored</h1>
+                    <button ng-click="displayCookies()">Display Cookies</button>
+                <div>Cookie: {{cookiestored}}</div>
+            </div>
+            <!-- Display Posts from Wordpress -->
+            <div ng-controller="DisplayPostsController">
+                <div ng-repeat="post in posts.posts">
+                    <p>{{post.title }}</p>
+                    <p>{{post.status}}</p>
+                    <div ng-bind="post.content"></div>
+                </div>
+            </div>
+            <!-- Generate Cookie --> 
+            <div ng-controller="CredentialsController">
+                <h1>Credentials</h1>
+                <form novalidate>
+                    <label for="username">Username</label><br>
+                    <input type="text" name="username" ng-model="form.username"><br>
+                    <label for="password">Password</label><br>
+                    <input type="password" name="password" ng-model="form.password"><br>
+                    <input type="submit" ng-click="send(form)" value="Login">
+                </form>
+                <div>{{nonce_one | json}}</div>
+                <div>{{cookie | json}}</div>
+            </div>
+            <!-- Submit a post -->
+            <div ng-controller="FormCtrl" >
+               <h1>Form Test</h1>
+               <form novalidate>
+                    <label for="title">Title</label><br>
+                    <input type="text" name="title" ng-model="form.title"><br>
+                    <label for="content">Content</label><br>
+                    <textarea name="content" ng-model="form.content"></textarea><br>
+                    <label for="excerpt">Excerpt</label><br>
+                    <textarea name="excerpt" ng-model="form.excerpt"></textarea><br>
+                    <input type="submit" ng-click="send(form)" value="Send">
+               </form>
+                <div>{{return | json}}</div>
+                <div>{{status | json}}</div>
+                <div>{{answer | json}}</div>
+                <div>{{isvalid | json}}</div>
+                <div>{{creation | json}}</div>
+                <div>{{creationerror | json}}</div>
+            </div>
+            <!-- Maps for both Operating systems are working properly -->
+            <div>
+                <a href='#' onclick='openBrowser();'>Open in System Browser</a>
+            </div> 
+            <!-- Upload Image -->
+            <div ng-controller="ImageUploadController">
+                <button ng-click="takeImage()">Upload Image</button>
+                <img id="myImage" src="#" width="30" length="30">
+            </div>
+            <!-- Stopwatch -->
+            <div>
+                <h1>Stopwatch</h1>
+                <br>
+                <khs></khs>
+            </div>
+            <!-- Stripe test -->
+            <div>
+                <form action="/" method="POST">
+                    <script
+                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                        data-key="pk_test_o1gQXgnPCgxZAfebfQz9XudA"
+                        data-amount="2000"
+                        data-name="Demo Site"
+                        data-description="2 widgets ($20.00)"
+                        data-image="/128x128.png">
+                    µ</script>
+                </form>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" charset="utf-8"> 
+            function onLoad() {
+                document.addEventListener("deviceready", onDeviceReady, false);
+                document.addEventListener("pause", onPause, false); 
+                document.addEventListener("resume", onResume, false);
+            }
+            function onDeviceReady() { 
+                console.log('Device is ready');
+                window.localStorage.clear();
+            }
+            function onPause() {
+                console.log('Device is Paused');
+            }
+            function onResume() {
+                console.log('Device resumed');
+            }
+            function openBrowser() { 
+                var deviceOS  = device.platform
+                var platform  = 'apple';
+                if(deviceOS   == 'Android') {
+                    platform  = 'google';
+                }
+                var ref = window.open('http://maps.'+platform+'.com/?q=7648+Monarch+Birch+ln+charlotte+North Carolina+28215', '_system', 'location=yes'); 
+                ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); }); 
+                ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); }); 
+                ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); }); 
+                ref.addEventListener('exit', function(event) { alert(event.type); }); 
+            } 
+        </script>
+    </body>
+</html>
