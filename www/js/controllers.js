@@ -67,6 +67,17 @@ sherlokApp.controller('FormCtrl', [ '$scope' , '$http', '$cookies', function($sc
 			);
 		}
 }]);
+sherlokApp.controller('stripeController',['$scope', '$http', function($scope, $http){
+	console.log('wewewe');
+	$http.post('https://api.stripe.com/v1/charge').
+		success(function(data) {
+    		console.log('lol');
+    		$scope.stripedata = data;
+    	}).
+		error(function(){
+    		console.log('here afa');
+    	});
+}]);
 sherlokApp.controller('CredentialsController', ['$scope', '$http', '$cookies', function($scope, $http, $cookies){
 	$scope.send = function(form) {
 		//Generate nonce for cookie
