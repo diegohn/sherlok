@@ -67,15 +67,15 @@ sherlokApp.controller('FormCtrl', [ '$scope' , '$http', '$cookies', function($sc
 			);
 		}
 }]);
-sherlokApp.controller('stripeController',['$scope', '$http', function($scope, $http){
-	$http.get('https://api.stripe.com/v1/charges').
-		success(function(data, status, headers, config) {
-			$scope.stripedata = status;
-		}).
-		error(function(data, status, headers, config) {
-			$scope.stripedata = status;
-		});
-}]);
+// sherlokApp.controller('stripeController',['$scope', '$http', function($scope, $http){
+// 	$http.get('https://api.stripe.com/v1/charges').
+// 		success(function(data, status, headers, config) {
+// 			$scope.stripedata = status;
+// 		}).
+// 		error(function(data, status, headers, config) {
+// 			$scope.stripedata = status;
+// 		});
+// }]);
 sherlokApp.controller('CredentialsController', ['$scope', '$http', '$cookies', function($scope, $http, $cookies){
 	$scope.send = function(form) {
 		//Generate nonce for cookie
