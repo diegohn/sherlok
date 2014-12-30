@@ -68,15 +68,13 @@ sherlokApp.controller('FormCtrl', [ '$scope' , '$http', '$cookies', function($sc
 		}
 }]);
 sherlokApp.controller('stripeController',['$scope', '$http', function($scope, $http){
-	console.log('wewewe');
-	$http.post('https://api.stripe.com/v1/charge').
-		success(function(data) {
-    		console.log('lol');
-    		$scope.stripedata = data;
-    	}).
-		error(function(){
-    		console.log('here afa');
-    	});
+	$http.get('https://api.stripe.com/v1/charges').
+		success(function(data, status, headers, config) {
+			$scope.stripedata = status;
+		}).
+		error(function(data, status, headers, config) {
+			$scope.stripedata = status;
+		});
 }]);
 sherlokApp.controller('CredentialsController', ['$scope', '$http', '$cookies', function($scope, $http, $cookies){
 	$scope.send = function(form) {
