@@ -1,4 +1,4 @@
-var sherlokApp = angular.module('sherlokApp', ['ngCookies']);
+var sherlokApp = angular.module('sherlokApp', ['ngCookies','angularPayments']);
 sherlokApp.controller('ImageUploadController',['$scope', function($scope){
 	$scope.takeImage = function() {
 		navigator.camera.getPicture(onSuccess, onFail, { 
@@ -22,6 +22,13 @@ sherlokApp.controller('ClearCookies',['$scope' , '$cookies', '$cookieStore', fun
 	$scope.clearCookies = function() {
     	$cookieStore.remove('myFavorite');
   	};
+}]);
+sherlokApp.controller('MainController',['$scope', function($scope){
+	$scope.handleStripe = function(status, response){
+    	$scope.testmsg = 'We got this far!!';
+    	$scope.statusmsg = status;
+    	$scope.resposemsg = response;
+    }
 }]);
 sherlokApp.controller('ShowCookies',['$scope' , '$cookies', '$cookieStore', function($scope, $cookies, $cookieStore){
 	$scope.cookiestored = $cookies.myFavorite;
@@ -66,15 +73,6 @@ sherlokApp.controller('FormCtrl', [ '$scope' , '$http', '$cookies', function($sc
 			  	}
 			);
 		}
-}]);
-sherlokApp.controller('stripeController',['$scope', '$http', function($scope, $http){
-	$http.get('https://api.stripe.com/v1/charges').
-		success(function(data, status, headers, config) {
-			$scope.stripedata = status;
-		}).
-		error(function(data, status, headers, config) {
-			$scope.stripedata = status;
-		});
 }]);
 sherlokApp.controller('CredentialsController', ['$scope', '$http', '$cookies', function($scope, $http, $cookies){
 	$scope.send = function(form) {

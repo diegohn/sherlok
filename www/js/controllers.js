@@ -1,4 +1,7 @@
-var sherlokApp = angular.module('sherlokApp', ['ngCookies','angularPayments']);
+
+Stripe.setPublishableKey('pk_test_o1gQXgnPCgxZAfebfQz9XudA');
+
+var sherlokApp = angular.module('sherlokApp', ['angularPayments','ngCookies']);
 sherlokApp.controller('ImageUploadController',['$scope', function($scope){
 	$scope.takeImage = function() {
 		navigator.camera.getPicture(onSuccess, onFail, { 
