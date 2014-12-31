@@ -1,4 +1,4 @@
-var sherlokApp = angular.module('sherlokApp', ['ngCookies']);
+var sherlokApp = angular.module('sherlokApp', ['ngCookies','angularPayments']);
 sherlokApp.controller('ImageUploadController',['$scope', function($scope){
 	$scope.takeImage = function() {
 		navigator.camera.getPicture(onSuccess, onFail, { 
@@ -22,6 +22,12 @@ sherlokApp.controller('ClearCookies',['$scope' , '$cookies', '$cookieStore', fun
 	$scope.clearCookies = function() {
     	$cookieStore.remove('myFavorite');
   	};
+}]);
+sherlokApp.controller('MainController',['$scope', function($scope){
+	$scope.handleStripe = function(status, response){
+    	$scope.statusmsg = status;
+    	$scope.resposemsg = response;
+    }
 }]);
 sherlokApp.controller('ShowCookies',['$scope' , '$cookies', '$cookieStore', function($scope, $cookies, $cookieStore){
 	$scope.cookiestored = $cookies.myFavorite;
