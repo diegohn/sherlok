@@ -1,0 +1,7 @@
+{
+  "name": "sherlok",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular-payments": "latest"
+  }
+}
