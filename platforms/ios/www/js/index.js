@@ -27,24 +27,93 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener("pause", this.onPause, false); 
+        document.addEventListener("resume", this.onResume, false);
     },
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
+        console.log('Device is ready!!');
+        window.localStorage.clear();
         app.receivedEvent('deviceready');
-        console.log('we are ready');
+    },
+    onPause: function() {
+        console.log('Device is Paused');
+        app.receivedEvent('pause');
+    },
+    onResume: function() {
+        console.log('Device resumed');
+        app.receivedEvent('resume');
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+        app.initPaymentUI();
+    },
+    initPaymentUI: function() {
+    var clientIDs = {
+      "PayPalEnvironmentProduction": "YOUR_PRODUCTION_CLIENT_ID",
+      "PayPalEnvironmentSandbox": "YOUR_SANDBOX_CLIENT_ID"
+    };
+    console.log('we are here');
+    PayPalMobile.init(clientIDs, app.onPayPalMobileInit);
+    console.log('we are here');
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+  },
+  onSuccesfulPayment: function(payment) {
+    console.log("payment success: " + JSON.stringify(payment, null, 4));
+  },
+  onAuthorizationCallback: function(authorization) {
+    console.log("authorization: " + JSON.stringify(authorization, null, 4));
+  },
+  createPayment: function() {
+    // for simplicity use predefined amount
+    var paymentDetails = new PayPalPaymentDetails("50.00", "0.00", "0.00");
+    var payment = new PayPalPayment("50.00", "USD", "Awesome Sauce", "Sale",
+      paymentDetails);
+    return payment;
+  },
+  configuration: function() {
+    var config = new PayPalConfiguration({
+      merchantName: "My test shop",
+      merchantPrivacyPolicyURL: "https://mytestshop.com/policy",
+      merchantUserAgreementURL: "https://mytestshop.com/agreement"
+    });
+    return config;
+  },
+  onPrepareRender: function() {
+    var buyNowBtn = document.getElementById("buyNowBtn");
+    var buyInFutureBtn = document.getElementById("buyInFutureBtn");
+    var profileSharingBtn = document.getElementById("profileSharingBtn");
 
-        console.log('Received Event: ' + id);
-    }
+    buyNowBtn.onclick = function(e) {
+      // single payment
+      PayPalMobile.renderSinglePaymentUI(app.createPayment(), app.onSuccesfulPayment,
+        app.onUserCanceled);
+    };
+
+    buyInFutureBtn.onclick = function(e) {
+      // future payment
+      PayPalMobile.renderFuturePaymentUI(app.onAuthorizationCallback, app
+        .onUserCanceled);
+    };
+
+    profileSharingBtn.onclick = function(e) {
+      // profile sharing
+      PayPalMobile.renderProfileSharingUI(["profile", "email", "phone",
+        "address", "futurepayments", "paypalattributes"
+      ], app.onAuthorizationCallback, app.onUserCanceled);
+    };
+  },
+  onPayPalMobileInit: function() {
+    console.log('we are here');
+    // must be called
+    // use PayPalEnvironmentNoNetwork mode to get look and feel of the flow
+    PayPalMobile.prepareToRender("PayPalEnvironmentNoNetwork", app.configuration(),
+      app.onPrepareRender);
+  },
+  onUserCanceled: function(result) {
+    console.log(result);
+  }
 };

@@ -34,7 +34,7 @@
         <script type="text/javascript" src="js/angular-cookies.min.js"></script>
         <script type="text/javascript" src="js/controllers.js"></script>
     </head>
-    <body onload="onLoad()">
+    <body>
         <div>
             <h1>Sherlok</h1>
             <!-- Clear Cookies -->
@@ -131,35 +131,25 @@
                     </div>
                 </form>
 
-                <div>Results</div>
-                <div>{{testmsg}}</div>
-                <div>{{statusmsg}}</div>
-                <div>{{resposemsg}}</div>
-                <div>{{errormsg}}</div>
-                <div>{{tokenmsg}}</div>
-                <div>{{successhttpmsg}}</div>
-                <div>{{errorhttpmsg}}</div>
+                <div>Results Stripe test</div>
+                <div><p>Error creating token:</p><p>{{errormsg}}</p></div>
+                <div><p>Token:</p><p>{{tokenmsg}}</p></div>
+                <div><p>Success result from http:</p><p>{{successhttpmsg}}</p></div>
+                <div><p>Error result from http:</p><p>{{errorhttpmsg}}</p></div>
             </div>
+            <!-- PayPal Test-->
+            <div>
+                <button id="buyNowBtn"> Buy Now !</button>
+            </div> 
         </div>
         <!-- angular-payments library - you probably want to install it through either bower or npm -->
         <script src="http://cdn.rawgit.com/laurihy/angular-payments/2472bc9befa256780d106a8e53a9dea12b7341ed/lib/angular-payments.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" charset="utf-8"> 
-            function onLoad() {
-                document.addEventListener("deviceready", onDeviceReady, false);
-                document.addEventListener("pause", onPause, false); 
-                document.addEventListener("resume", onResume, false);
-            }
-            function onDeviceReady() { 
-                console.log('Device is ready!!');
-                window.localStorage.clear();
-            }
-            function onPause() {
-                console.log('Device is Paused');
-            }
-            function onResume() {
-                console.log('Device resumed');
-            }
+        <script type="text/javascript" src="js/paypal-mobile-js-helper.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            app.initialize();
+             
             function openBrowser() { 
                 var deviceOS  = device.platform
                 var platform  = 'apple';
@@ -171,7 +161,7 @@
                 ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); }); 
                 ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); }); 
                 ref.addEventListener('exit', function(event) { alert(event.type); }); 
-            } 
+            }
         </script>
     </body>
 </html>

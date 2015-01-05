@@ -54,3 +54,35 @@ To disable web storage backup to iCloud, set the BackupWebStorage preference to 
 
 2014-12-15 15:02:51.146 Hello World[28304:7382426] Resetting plugins due to page load.
 2014-12-15 15:02:51.364 Hello World[28304:7382426] Finished load of: file:///Users/development2/Library/Developer/CoreSimulator/Devices/FE73A2A5-612D-4810-B107-C9AA6C393B81/data/Containers/Bundle/Application/705A9B17-EC6A-4DC0-8373-33E47D842897/Hello%20World.app/www/index.html
+2015-01-05 11:19:21.038 Sherlok[23083:6919528] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/development2/Library/Developer/CoreSimulator/Devices/FE73A2A5-612D-4810-B107-C9AA6C393B81/data/Containers/Data/Application/9EC58C3B-178B-465B-AFFC-18A65C85D4E3/Library/Cookies/Cookies.binarycookies
+2015-01-05 11:19:21.246 Sherlok[23083:6919528] Apache Cordova native platform version 3.7.0 is starting.
+2015-01-05 11:19:21.246 Sherlok[23083:6919528] Multi-tasking -> Device: YES, App: YES
+2015-01-05 11:19:21.279 Sherlok[23083:6919528] Unlimited access to network resources
+2015-01-05 11:19:21.446 Sherlok[23083:6919528] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-01-05 11:19:21.705 Sherlok[23083:6919528] [CDVTimer][file] 21.710992ms
+2015-01-05 11:19:21.722 Sherlok[23083:6919528] [CDVTimer][splashscreen] 17.364979ms
+2015-01-05 11:19:21.722 Sherlok[23083:6919528] [CDVTimer][paypalmobile] 0.030994ms
+2015-01-05 11:19:21.722 Sherlok[23083:6919528] [CDVTimer][TotalPluginStartup] 39.496005ms
+2015-01-05 11:19:22.293 Sherlok[23083:6919528] Resetting plugins due to page load.
+2015-01-05 11:19:23.026 Sherlok[23083:6919528] Finished load of: file:///Users/development2/Library/Developer/CoreSimulator/Devices/FE73A2A5-612D-4810-B107-C9AA6C393B81/data/Containers/Bundle/Application/77D8CC92-0454-4218-A8ED-E3184D28005D/Sherlok.app/www/index.html
+2015-01-05 11:19:23.282 Sherlok[23083:6919528] THREAD WARNING: ['PayPalMobile'] took '193.633789' ms. Plugin should use a background thread.
+2015-01-05 11:19:23.332 Sherlok[23083:6919528] THREAD WARNING: ['PayPalMobile'] took '49.350098' ms. Plugin should use a background thread.
+2015-01-05 11:19:34.249 Sherlok[23083:6919528] card.io: Camera support only available on armv7(s) architecture -- can't use camera
+2015-01-05 11:19:36.144 Sherlok[23083:6919528] NSScanner: nil string argument
+2015-01-05 11:19:36.920 Sherlok[23083:6919528] Can't find keyplane that supports type 4 for keyboard iPhone-PortraitChoco-NumberPad; using 2382260317_PortraitChoco_iPhone-Simple-Pad_Default
+2015-01-05 11:19:36.946 Sherlok[23083:6919528] NSScanner: nil string argument
+2015-01-05 11:19:36.946 Sherlok[23083:6919528] NSScanner: nil string argument
+2015-01-05 11:19:36.946 Sherlok[23083:6919528] NSScanner: nil string argument
+2015-01-05 11:19:43.212 Sherlok[23083:6919528] Can't find keyplane that supports type 4 for keyboard iPhone-PortraitChoco-NumberPad; using 2382260317_PortraitChoco_iPhone-Simple-Pad_Default
+2015-01-05 11:19:47.444 Sherlok[23083:6919528] Can't find keyplane that supports type 4 for keyboard iPhone-PortraitChoco-NumberPad; using 2382260317_PortraitChoco_iPhone-Simple-Pad_Default
+2015-01-05 11:19:54.487 Sherlok[23083:6919528] Can't find keyplane that supports type 4 for keyboard iPhone-PortraitChoco-NumberPad; using 2382260317_PortraitChoco_iPhone-Simple-Pad_Default
+2015-01-05 11:20:20.913 Sherlok[23083:6919528] Can't find keyplane that supports type 4 for keyboard iPhone-PortraitChoco-NumberPad; using 2382260317_PortraitChoco_iPhone-Simple-Pad_Default
+2015-01-05 11:20:21.341 Sherlok[23083:6919528] Can't find keyplane that supports type 4 for keyboard iPhone-PortraitChoco-NumberPad; using 2382260317_PortraitChoco_iPhone-Simple-Pad_Default
+2015-01-05 11:20:25.357 Sherlok[23083:6919528] Can't find keyplane that supports type 4 for keyboard iPhone-PortraitChoco-NumberPad; using 2382260317_PortraitChoco_iPhone-Simple-Pad_Default

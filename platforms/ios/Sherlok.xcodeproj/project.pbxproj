@@ -69,6 +69,17 @@
 		DAA3FBECE2264950982F0CAA /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = F11B2A1318CE45DD9830D5AD /* CDVSplashScreen.m */; };
 		82A03EF36A2045558862D4D6 /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBCBD0A5F94609B9045E68 /* CDVInAppBrowser.m */; };
 		065701F4A35D4E9BB67F0778 /* CDVFileTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C8B56CDFE3480A8EFB4072 /* CDVFileTransfer.m */; };
+		A6F93408EE0E4C97BF80C377 /* PayPalMobileCordovaPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF0CBE304804DEA9A0A070C /* PayPalMobileCordovaPlugin.m */; };
+		C8DE147794574006AB6C404C /* libPayPalMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE0EBDC99ED04E0F9B36385A /* libPayPalMobile.a */; };
+		278FF87077584891ABB1E6AF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5F86EE67BB494D9A4F20A4 /* AVFoundation.framework */; };
+		0DC4BF5DC6754C44865AA85E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9F1DED36E449EF8730E5B1 /* CFNetwork.framework */; };
+		90CC86F0D38846FCB282FEBE /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C379C67E154399B566BD0C /* CoreMedia.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F20C112EA0AD4C9099D2F139 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C10318D250140CCBA9C4FCC /* MessageUI.framework */; };
+		51A7723FACA94D95822EB92D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 284F0DF2EDAC4FBDB7F03208 /* OpenGLES.framework */; };
+		DBF72030190942B6808AC480 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C871353FA9AD44D6B42C917A /* Security.framework */; };
+		36F0737875AF4CE493E8E779 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D25B9D7CD94E8E90B6523B /* QuartzCore.framework */; };
+		25C13D18882043EFAFAA544E /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E1EEDED8E4354E4A84302674 /* libc++.dylib */; };
+		5F0833A1658A4308B05F0B2F /* libPayPalMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DEA3E2932A45D0B9E91E36 /* libPayPalMobile.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,6 +197,25 @@
 		26712A099FDF494EA22819B1 /* CDVInAppBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVInAppBrowser.h"; path = "org.apache.cordova.inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		27C8B56CDFE3480A8EFB4072 /* CDVFileTransfer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVFileTransfer.m"; path = "org.apache.cordova.file-transfer/CDVFileTransfer.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		126BB19FA9FB443FAD63B77C /* CDVFileTransfer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVFileTransfer.h"; path = "org.apache.cordova.file-transfer/CDVFileTransfer.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		CCF0CBE304804DEA9A0A070C /* PayPalMobileCordovaPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "PayPalMobileCordovaPlugin.m"; path = "com.paypal.cordova.mobilesdk/PayPalMobileCordovaPlugin.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		AE0EBDC99ED04E0F9B36385A /* libPayPalMobile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPayPalMobile.a"; path = "Sherlok/Plugins/com.paypal.cordova.mobilesdk/libPayPalMobile.a"; sourceTree = "<group>"; fileEncoding = 4; };
+		67A8217FD7D24AF399AB450D /* PayPalMobileCordovaPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PayPalMobileCordovaPlugin.h"; path = "com.paypal.cordova.mobilesdk/PayPalMobileCordovaPlugin.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		9B8C5D3A61AE437795593391 /* PayPalConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PayPalConfiguration.h"; path = "com.paypal.cordova.mobilesdk/PayPalConfiguration.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		FCE76AD1749D4D5CA884706E /* PayPalFuturePaymentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PayPalFuturePaymentViewController.h"; path = "com.paypal.cordova.mobilesdk/PayPalFuturePaymentViewController.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		FBE1EFD02F3443179AD4ED0F /* PayPalMobile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PayPalMobile.h"; path = "com.paypal.cordova.mobilesdk/PayPalMobile.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		9A1E0BF8DC4F43358AB38D47 /* PayPalOAuthScopes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PayPalOAuthScopes.h"; path = "com.paypal.cordova.mobilesdk/PayPalOAuthScopes.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		FD977395F5A94653A2A556C4 /* PayPalPayment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PayPalPayment.h"; path = "com.paypal.cordova.mobilesdk/PayPalPayment.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		19B65B06DBE94EB7AC40C58F /* PayPalPaymentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PayPalPaymentViewController.h"; path = "com.paypal.cordova.mobilesdk/PayPalPaymentViewController.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		7E3F886A9168414183333502 /* PayPalProfileSharingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PayPalProfileSharingViewController.h"; path = "com.paypal.cordova.mobilesdk/PayPalProfileSharingViewController.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		8E5F86EE67BB494D9A4F20A4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AVFoundation.framework"; path = "System/Library/Frameworks/AVFoundation.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		4D9F1DED36E449EF8730E5B1 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CFNetwork.framework"; path = "System/Library/Frameworks/CFNetwork.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		35C379C67E154399B566BD0C /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CoreMedia.framework"; path = "System/Library/Frameworks/CoreMedia.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		7C10318D250140CCBA9C4FCC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "MessageUI.framework"; path = "System/Library/Frameworks/MessageUI.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		284F0DF2EDAC4FBDB7F03208 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "OpenGLES.framework"; path = "System/Library/Frameworks/OpenGLES.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		C871353FA9AD44D6B42C917A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Security.framework"; path = "System/Library/Frameworks/Security.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		C4D25B9D7CD94E8E90B6523B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "QuartzCore.framework"; path = "System/Library/Frameworks/QuartzCore.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		E1EEDED8E4354E4A84302674 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; fileEncoding = 4; };
+		43DEA3E2932A45D0B9E91E36 /* libPayPalMobile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPayPalMobile.a"; path = "libPayPalMobile.a"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +234,16 @@
 				8C3115CA38BC407FB96073B6 /* AudioToolbox.framework in Frameworks */,
 				0440D02489364E6D911AFAE8 /* AddressBook.framework in Frameworks */,
 				64DAB2017F044A52B7E7A15B /* AddressBookUI.framework in Frameworks */,
+				C8DE147794574006AB6C404C /* libPayPalMobile.a in Frameworks */,
+				278FF87077584891ABB1E6AF /* AVFoundation.framework in Frameworks */,
+				0DC4BF5DC6754C44865AA85E /* CFNetwork.framework in Frameworks */,
+				90CC86F0D38846FCB282FEBE /* CoreMedia.framework in Frameworks */,
+				F20C112EA0AD4C9099D2F139 /* MessageUI.framework in Frameworks */,
+				51A7723FACA94D95822EB92D /* OpenGLES.framework in Frameworks */,
+				DBF72030190942B6808AC480 /* Security.framework in Frameworks */,
+				36F0737875AF4CE493E8E779 /* QuartzCore.framework in Frameworks */,
+				25C13D18882043EFAFAA544E /* libc++.dylib in Frameworks */,
+				5F0833A1658A4308B05F0B2F /* libPayPalMobile.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +325,16 @@
 				4FE6C25D32BD489EBB6F1495 /* AudioToolbox.framework */,
 				805CD432E298418CA2F9B8C5 /* AddressBook.framework */,
 				3F205C84BFDE4DF5BC3362F9 /* AddressBookUI.framework */,
+				AE0EBDC99ED04E0F9B36385A /* libPayPalMobile.a */,
+				8E5F86EE67BB494D9A4F20A4 /* AVFoundation.framework */,
+				4D9F1DED36E449EF8730E5B1 /* CFNetwork.framework */,
+				35C379C67E154399B566BD0C /* CoreMedia.framework */,
+				7C10318D250140CCBA9C4FCC /* MessageUI.framework */,
+				284F0DF2EDAC4FBDB7F03208 /* OpenGLES.framework */,
+				C871353FA9AD44D6B42C917A /* Security.framework */,
+				C4D25B9D7CD94E8E90B6523B /* QuartzCore.framework */,
+				E1EEDED8E4354E4A84302674 /* libc++.dylib */,
+				43DEA3E2932A45D0B9E91E36 /* libPayPalMobile.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -343,6 +393,15 @@
 				26712A099FDF494EA22819B1 /* CDVInAppBrowser.h */,
 				27C8B56CDFE3480A8EFB4072 /* CDVFileTransfer.m */,
 				126BB19FA9FB443FAD63B77C /* CDVFileTransfer.h */,
+				CCF0CBE304804DEA9A0A070C /* PayPalMobileCordovaPlugin.m */,
+				67A8217FD7D24AF399AB450D /* PayPalMobileCordovaPlugin.h */,
+				9B8C5D3A61AE437795593391 /* PayPalConfiguration.h */,
+				FCE76AD1749D4D5CA884706E /* PayPalFuturePaymentViewController.h */,
+				FBE1EFD02F3443179AD4ED0F /* PayPalMobile.h */,
+				9A1E0BF8DC4F43358AB38D47 /* PayPalOAuthScopes.h */,
+				FD977395F5A94653A2A556C4 /* PayPalPayment.h */,
+				19B65B06DBE94EB7AC40C58F /* PayPalPaymentViewController.h */,
+				7E3F886A9168414183333502 /* PayPalProfileSharingViewController.h */,
 			);
 			name = Plugins;
 			path = "Sherlok/Plugins";
@@ -550,6 +609,7 @@
 				DAA3FBECE2264950982F0CAA /* CDVSplashScreen.m in Sources */,
 				82A03EF36A2045558862D4D6 /* CDVInAppBrowser.m in Sources */,
 				065701F4A35D4E9BB67F0778 /* CDVFileTransfer.m in Sources */,
+				A6F93408EE0E4C97BF80C377 /* PayPalMobileCordovaPlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +652,10 @@
 				);
 				PRODUCT_NAME = "Sherlok";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Sherlok/Plugins/com.paypal.cordova.mobilesdk\"",
+				);
 			};
 			name = Debug;
 		};
@@ -621,6 +685,10 @@
 				);
 				PRODUCT_NAME = "Sherlok";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Sherlok/Plugins/com.paypal.cordova.mobilesdk\"",
+				);
 			};
 			name = Release;
 		};

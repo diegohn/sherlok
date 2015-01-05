@@ -276,6 +276,13 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/com.paypal.cordova.mobilesdk/www/cdv-plugin-paypal-mobile-sdk.js",
+        "id": "com.paypal.cordova.mobilesdk.PayPalMobile",
+        "clobbers": [
+            "PayPalMobile"
+        ]
+    },
+    {
         "file": "plugins/org.apache.cordova.file/www/DirectoryEntry.js",
         "id": "org.apache.cordova.file.DirectoryEntry",
         "clobbers": [
@@ -440,6 +447,7 @@ module.exports.metadata =
     "org.apache.cordova.splashscreen": "0.3.5",
     "org.apache.cordova.inappbrowser": "0.5.4",
     "org.apache.cordova.file-transfer": "0.4.6",
+    "com.paypal.cordova.mobilesdk": "3.0.0",
     "org.apache.cordova.file": "1.3.2"
 }
 // BOTTOM OF METADATA

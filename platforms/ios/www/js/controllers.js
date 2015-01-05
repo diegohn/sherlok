@@ -28,8 +28,6 @@ sherlokApp.controller('ClearCookies',['$scope' , '$cookies', '$cookieStore', fun
 }]);
 sherlokApp.controller('MainController',['$scope', '$http', '$cookies', function($scope, $http, $cookies){
 	$scope.handleStripe = function(status, response){
-    	$scope.statusmsg = status;
-    	$scope.resposemsg = response;
     	if(response.error) {
 		    $scope.errormsg = response.error;
 		} else {
