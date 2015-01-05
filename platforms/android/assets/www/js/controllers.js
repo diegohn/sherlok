@@ -26,16 +26,18 @@ sherlokApp.controller('ClearCookies',['$scope' , '$cookies', '$cookieStore', fun
     	$cookieStore.remove('myFavorite');
   	};
 }]);
-sherlokApp.controller('MainController',['$scope', '$http', function($scope, $http){
+sherlokApp.controller('MainController',['$scope', '$http', '$cookies', function($scope, $http, $cookies){
 	$scope.handleStripe = function(status, response){
     	$scope.statusmsg = status;
     	$scope.resposemsg = response;
     	if(response.error) {
 		    $scope.errormsg = response.error;
 		} else {
-		    token = response.id
+		    token = response.id;
+		    var favoriteCookie = $cookies.myFavorite;
 		    $scope.tokenmsg = token;
-		    $http.post('https://sk_test_5O2gQVZaPgJgKdwr5dqoSvoW@api.stripe.com/v1/charges').
+		    console.log(token);
+		    $http.post('http://sherlok.theideapeople.net?json=tip.process_stripe_payment&cookie=' +favoriteCookie+'&token='+token+'&invoiceid=123').
 		    success(function(data, status, headers, config){
 		    	$scope.successhttpmsg = data;
 		    }).
