@@ -54,7 +54,8 @@ var app = {
     initPaymentUI: function() {
     var clientIDs = {
       "PayPalEnvironmentProduction": "YOUR_PRODUCTION_CLIENT_ID",
-      "PayPalEnvironmentSandbox": "YOUR_SANDBOX_CLIENT_ID"
+      "PayPalEnvironmentSandbox": "AfrSshBn9SrLOxrH9XNPH0qAy5xo-UqdqWcpRx2lu_BqE6a8EEGm2CEMu0E7
+"
     };
     console.log('we are here');
     PayPalMobile.init(clientIDs, app.onPayPalMobileInit);
@@ -110,7 +111,7 @@ var app = {
     console.log('we are here');
     // must be called
     // use PayPalEnvironmentNoNetwork mode to get look and feel of the flow
-    PayPalMobile.prepareToRender("PayPalEnvironmentNoNetwork", app.configuration(),
+    PayPalMobile.prepareToRender("PayPalEnvironmentSandbox", app.configuration(),
       app.onPrepareRender);
   },
   onUserCanceled: function(result) {
