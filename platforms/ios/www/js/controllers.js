@@ -26,11 +26,23 @@ sherlokApp.controller('ClearCookies',['$scope' , '$cookies', '$cookieStore', fun
     	$cookieStore.remove('myFavorite');
   	};
 }]);
-sherlokApp.controller('MainController',['$scope', function($scope){
+sherlokApp.controller('MainController',['$scope', '$http', function($scope, $http){
 	$scope.handleStripe = function(status, response){
-    	$scope.testmsg = 'We got this far!!';
     	$scope.statusmsg = status;
     	$scope.resposemsg = response;
+    	if(response.error) {
+		    $scope.errormsg = response.error;
+		} else {
+		    token = response.id
+		    $scope.tokenmsg = token;
+		    $http.post('https://sk_test_5O2gQVZaPgJgKdwr5dqoSvoW@api.stripe.com/v1/charges').
+		    success(function(data, status, headers, config){
+		    	$scope.successhttpmsg = data;
+		    }).
+		    error(function(data, status, headers, config){
+		    	$scope.errorhttpmsg = data;
+		    });
+		}
     }
 }]);
 sherlokApp.controller('ShowCookies',['$scope' , '$cookies', '$cookieStore', function($scope, $cookies, $cookieStore){
