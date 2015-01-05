@@ -110,7 +110,7 @@ var app = {
     console.log('we are here');
     // must be called
     // use PayPalEnvironmentNoNetwork mode to get look and feel of the flow
-    PayPalMobile.prepareToRender("PayPalEnvironmentNoNetwork", app.configuration(),
+    PayPalMobile.prepareToRender("PayPalEnvironmentSandbox", app.configuration(),
       app.onPrepareRender);
   },
   onUserCanceled: function(result) {
