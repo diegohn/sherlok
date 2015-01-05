@@ -17,10 +17,6 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"Accelerometer\"><param name=\"android-package\" value=\"org.apache.cordova.devicemotion.AccelListener\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"Compass\"><param name=\"android-package\" value=\"org.apache.cordova.deviceorientation.CompassListener\" /></feature>",
                             "count": 1
                         },
@@ -42,14 +38,6 @@
                         },
                         {
                             "xml": "<feature name=\"Notification\"><param name=\"android-package\" value=\"org.apache.cordova.dialogs.Notification\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Vibration\"><param name=\"android-package\" value=\"org.apache.cordova.vibration.Vibration\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Contacts\"><param name=\"android-package\" value=\"org.apache.cordova.contacts.ContactManager\" /></feature>",
                             "count": 1
                         },
                         {
@@ -109,24 +97,12 @@
                         {
                             "xml": "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\" />",
                             "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.READ_CONTACTS\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.WRITE_CONTACTS\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\" />",
-                            "count": 1
                         }
                     ],
                     "/manifest": [
                         {
                             "xml": "<uses-permission android:name=\"android.permission.VIBRATE\" />",
-                            "count": 2
+                            "count": 1
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.CAMERA\" />",
@@ -214,9 +190,6 @@
         "org.apache.cordova.network-information": {
             "PACKAGE_NAME": "com.phonegap.helloworld"
         },
-        "org.apache.cordova.device-motion": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
         "org.apache.cordova.device-orientation": {
             "PACKAGE_NAME": "com.phonegap.helloworld"
         },
@@ -233,12 +206,6 @@
             "PACKAGE_NAME": "com.phonegap.helloworld"
         },
         "org.apache.cordova.dialogs": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "org.apache.cordova.vibration": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "org.apache.cordova.contacts": {
             "PACKAGE_NAME": "com.phonegap.helloworld"
         },
         "org.apache.cordova.globalization": {

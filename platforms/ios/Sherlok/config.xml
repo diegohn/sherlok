@@ -25,9 +25,6 @@
     <feature name="NetworkStatus">
         <param name="ios-package" value="CDVConnection" />
     </feature>
-    <feature name="Accelerometer">
-        <param name="ios-package" value="CDVAccelerometer" />
-    </feature>
     <feature name="Compass">
         <param name="ios-package" value="CDVCompass" />
     </feature>
@@ -49,12 +46,6 @@
     </feature>
     <feature name="Notification">
         <param name="ios-package" value="CDVNotification" />
-    </feature>
-    <feature name="Vibration">
-        <param name="ios-package" value="CDVVibration" />
-    </feature>
-    <feature name="Contacts">
-        <param name="ios-package" value="CDVContacts" />
     </feature>
     <feature name="Globalization">
         <param name="ios-package" value="CDVGlobalization" />
